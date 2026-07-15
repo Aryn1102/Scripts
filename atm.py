@@ -81,3 +81,6 @@ def  get_amount(prompt):
 
 def exit_program():
     sys.exit("Exiting the program. Goodbye!")
+
+if __name__=="__main__":
+    main()

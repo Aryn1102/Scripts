@@ -101,3 +101,6 @@ def search_by_phone():
             break
     if not found:
         print("Contact not found.")
+
+if __name__=="__main__":
+    main()

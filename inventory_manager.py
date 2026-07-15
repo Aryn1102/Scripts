@@ -112,3 +112,6 @@ def statistics():
     print(f"Total items in inventory: {total_items}")
     print(f"Unique items in inventory: {unique_items}")
     print(f"Total value of inventory: ${total_value:.2f}")
+
+if __name__=="__main__":
+    main()
