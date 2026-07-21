@@ -1,8 +1,8 @@
-from abc import abstractmethod
+from abc import ABC, abstractmethod
 from pathlib import Path
 import pandas as pd
 
-class DatasetLoader:
+class DatasetLoader(ABC):
     
     def __init__(self, file_path:str) ->None:
         self.file_path = Path(file_path)
