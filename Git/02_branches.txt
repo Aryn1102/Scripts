@@ -1,0 +1,12 @@
+Lesson 2 — Branches
+Command	Purpose
+git branch	List branches
+git branch name	Create a branch
+git switch name	Switch branches
+git switch -c name	Create and switch to a branch
+git merge branch	Merge a branch into the current branch
+git branch -d branch	Delete a merged branch
+Important Concepts
+A branch is an independent line of development.
+Changes remain inside a branch until merged.
+Never develop new features directly on main.
