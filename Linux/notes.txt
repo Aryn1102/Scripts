@@ -1,0 +1,3 @@
+Python is awesome
+git is important
+python is used in ml
