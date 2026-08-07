@@ -1,0 +1,209 @@
+# ML Theory Lesson 2 - Supervised vs Unsupervised Learning
+
+## Supervised Learning
+
+Supervised learning is a type of machine learning where the dataset contains both input features (X) and target labels (y). The model learns the relationship between them and predicts the target for unseen data.
+
+Examples:
+- House Price Prediction
+- Spam Detection
+- Heart Disease Prediction
+- Clinical Trial Outcome Prediction
+- Salary Prediction
+
+---
+
+## Classification
+
+Classification is a supervised learning task where the target variable is categorical.
+
+Examples:
+- Spam / Not Spam
+- Fraud / Not Fraud
+- Disease / No Disease
+- Clinical Trial Success / Failure
+
+Common Algorithms:
+- Logistic Regression
+- Decision Tree
+- Random Forest
+- SVM
+- KNN
+
+---
+
+## Regression
+
+Regression is a supervised learning task where the target variable is continuous (numerical).
+
+Examples:
+- House Price
+- Employee Salary
+- Temperature
+- Rainfall Amount
+- Stock Price (simplified)
+
+Common Algorithms:
+- Linear Regression
+- Decision Tree Regressor
+- Random Forest Regressor
+
+---
+
+## Unsupervised Learning
+
+Unsupervised learning is a type of machine learning where only input features (X) are available. There is no target variable. The algorithm discovers hidden patterns or structures in the data.
+
+Examples:
+- Customer Segmentation
+- News Article Grouping
+- Market Basket Analysis
+- User Segmentation
+
+---
+
+## Clustering
+
+Clustering is an unsupervised learning task that groups similar data points together without predefined labels.
+
+Examples:
+- Customer Segmentation
+- Grouping Similar News Articles
+- Grouping Patients by Symptoms
+- Movie Recommendation User Groups
+
+Common Algorithms:
+- K-Means
+- DBSCAN
+- Hierarchical Clustering
+
+---
+
+# Supervised vs Unsupervised
+
+| Supervised | Unsupervised |
+|------------|--------------|
+| Has target labels | No target labels |
+| Predicts target | Finds hidden patterns |
+| Classification | Clustering |
+| Regression | Dimensionality Reduction |
+
+---
+
+# How to Identify the Problem
+
+Step 1
+
+Does the dataset have a target column?
+
+Yes → Supervised Learning
+
+No → Unsupervised Learning
+
+---
+
+Step 2 (If Supervised)
+
+Is the target categorical?
+
+Yes → Classification
+
+No → Regression
+
+---
+
+# Examples
+
+| Problem | Learning Type |
+|----------|---------------|
+| House Price Prediction | Supervised Regression |
+| Employee Salary Prediction | Supervised Regression |
+| Spam Detection | Supervised Classification |
+| Heart Disease Prediction | Supervised Classification |
+| Diabetes Prediction | Supervised Classification |
+| Clinical Trial Success Prediction | Supervised Classification |
+| Customer Segmentation | Unsupervised Clustering |
+| Mall Customer Grouping | Unsupervised Clustering |
+| News Article Grouping | Unsupervised Clustering |
+
+---
+
+# Interview Questions
+
+## What is supervised learning?
+
+Supervised learning is a machine learning approach where the model learns from labeled data containing both input features and target labels to predict outputs for unseen data.
+
+---
+
+## What is unsupervised learning?
+
+Unsupervised learning is a machine learning approach where the dataset contains only input features and the algorithm discovers hidden patterns without target labels.
+
+---
+
+## Difference between classification and regression?
+
+Classification predicts categorical outputs, whereas regression predicts continuous numerical values.
+
+---
+
+## Why can't clustering be called classification?
+
+Classification requires labeled target data for training, whereas clustering groups similar data without any target labels.
+
+---
+
+## Give three examples of supervised learning.
+
+- House Price Prediction
+- Spam Detection
+- Heart Disease Prediction
+
+---
+
+# Engineering Decision Flow
+
+                    Dataset
+                       │
+          ┌────────────┴────────────┐
+          │                         │
+   Target Column?              No Target
+          │                         │
+         Yes                 Unsupervised
+          │                    Clustering
+   ┌──────┴───────┐
+   │              │
+Categorical   Numerical
+   │              │
+Classification  Regression
+
+---
+
+# Project Connection
+
+## Universal ML Dashboard
+
+Regression:
+- Salary Prediction
+- House Price Prediction
+
+Classification:
+- Disease Prediction
+- Spam Detection
+
+Clustering:
+- Customer Segmentation
+
+---
+
+## Clinical Trial Outcome Prediction
+
+Target:
+- Trial Outcome (Success / Failure)
+
+Learning Type:
+- Supervised Learning
+
+Problem Type:
+- Classification
