@@ -1,0 +1,13 @@
+Lesson 2 — Search & Redirection
+Command	Purpose
+find	Search for files
+grep	Search text inside files
+>	Overwrite output to a file
+>>	Append output to a file
+cat	Display file contents
+rmdir	Remove an empty directory
+Important Concepts
+Absolute path: Starts from the root (e.g. /f/Scripts/SQL).
+Relative path: Starts from the current directory (e.g. cd SQL).
+find searches for files and folders.
+grep searches for matching text.

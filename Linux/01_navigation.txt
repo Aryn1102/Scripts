@@ -1,0 +1,20 @@
+Lesson 1 — Navigation
+Command	Purpose
+pwd	Print working directory
+ls	List files
+ls -la	List all files including hidden files with detailed information
+cd folder	Enter a directory
+cd ..	Go to parent directory
+mkdir folder	Create a directory
+touch file.txt	Create a file
+cp	Copy files
+mv	Move or rename files
+rm	Remove files
+Interview Questions
+
+Why do engineers prefer CLI?
+
+Faster for repetitive tasks.
+Easy to automate.
+Works well on remote servers.
+Uses fewer resources than a GUI.
