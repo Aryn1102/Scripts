@@ -1,0 +1,17 @@
+Lesson 1 — Basic Workflow
+Command	Purpose
+git init	Initialize a Git repository
+git status	Show repository status
+git add .	Stage all changes
+git add filename	Stage one file
+git commit -m "message"	Save staged changes
+git log	Show commit history
+Interview Questions
+
+What is Git?
+
+Git is a distributed version control system used to track changes in source code and collaborate with other developers.
+
+Difference between Git and GitHub?
+
+Git is the version control software. GitHub is a cloud platform that hosts Git repositories.
