@@ -1,0 +1,10 @@
+Python
+Machine Learning
+Deep Learning
+SQL
+Git
+Linux
+Docker
+Kubernetes
+Pandas
+NumPy
