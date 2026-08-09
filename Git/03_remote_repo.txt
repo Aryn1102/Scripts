@@ -1,0 +1,346 @@
+# Git Lesson 3 - Remote Repositories (GitHub)
+
+## What is a Remote Repository?
+
+A remote repository is a Git repository hosted on another machine (commonly GitHub). It is used for backup, synchronization, and collaboration.
+
+Examples:
+- GitHub
+- GitLab
+- Bitbucket
+
+---
+
+## Local Repository vs Remote Repository
+
+Local Repository
+- Stored on your computer.
+- Used for development.
+- Changes are made locally.
+
+Remote Repository
+- Stored on a server (e.g., GitHub).
+- Used to share code with others.
+- Acts as a backup of your project.
+
+Workflow:
+
+Local Repository
+↓
+git commit
+↓
+git push
+↓
+Remote Repository (GitHub)
+
+---
+
+## GitHub
+
+GitHub is a cloud platform that hosts Git repositories and provides version control, collaboration, code review, pull requests, issues, and project history.
+
+---
+
+## git remote -v
+
+Displays all configured remote repositories along with their fetch and push URLs.
+
+Syntax:
+
+```bash
+git remote -v
+```
+
+Example Output:
+
+```text
+origin  https://github.com/username/project.git (fetch)
+origin  https://github.com/username/project.git (push)
+```
+
+---
+
+## origin
+
+`origin` is the default nickname of the remote repository.
+
+It is **not** the name of a branch.
+
+Example:
+
+```text
+origin
+│
+├── main
+├── feature-login
+└── feature-eda
+```
+
+Instead of typing the full GitHub URL every time, Git allows us to use `origin`.
+
+---
+
+## git push
+
+Uploads local commits to a remote repository.
+
+Syntax:
+
+```bash
+git push origin main
+```
+
+Meaning:
+
+- `git push` → Upload commits.
+- `origin` → Remote repository.
+- `main` → Branch on the remote repository.
+
+Example:
+
+```bash
+git push origin feature-eda
+```
+
+Uploads the local `feature-eda` branch to the `feature-eda` branch on the remote repository.
+
+---
+
+## git pull
+
+Downloads the latest commits from the remote repository and updates the local repository.
+
+Syntax:
+
+```bash
+git pull origin main
+```
+
+Why use it?
+
+- Get the latest changes.
+- Avoid working on outdated code.
+- Reduce merge conflicts.
+
+---
+
+## git clone
+
+Downloads an existing remote repository to your local computer.
+
+Syntax:
+
+```bash
+git clone https://github.com/user/project.git
+```
+
+Clone is generally used only once when obtaining a project for the first time.
+
+---
+
+## Difference between git init and git clone
+
+### git init
+
+- Creates a new Git repository.
+- Used for a new project.
+- Does not connect to GitHub automatically.
+
+### git clone
+
+- Downloads an existing Git repository.
+- Includes all commits, branches, and history.
+- Automatically sets up the remote repository (`origin`).
+
+---
+
+## Difference between git push and git pull
+
+### git push
+
+Local Repository → Remote Repository
+
+Uploads local commits.
+
+---
+
+### git pull
+
+Remote Repository → Local Repository
+
+Downloads the latest commits.
+
+---
+
+## Typical Git Workflow
+
+```text
+git clone
+      ↓
+Create Branch
+      ↓
+Edit Code
+      ↓
+git add
+      ↓
+git commit
+      ↓
+git push
+      ↓
+Pull Request
+      ↓
+Merge into main
+      ↓
+git pull
+```
+
+---
+
+## Common Commands
+
+Check remotes
+
+```bash
+git remote -v
+```
+
+Push commits
+
+```bash
+git push origin main
+```
+
+Pull latest changes
+
+```bash
+git pull origin main
+```
+
+Clone repository
+
+```bash
+git clone <repository_url>
+```
+
+Check current branch
+
+```bash
+git branch
+```
+
+Check repository status
+
+```bash
+git status
+```
+
+---
+
+# Interview Questions
+
+## What is a remote repository?
+
+A remote repository is a Git repository hosted on another machine (such as GitHub) that is used for backup, synchronization, and collaboration.
+
+---
+
+## What is GitHub?
+
+GitHub is a cloud platform that hosts Git repositories and provides collaboration, version control, code review, pull requests, and project management features.
+
+---
+
+## Difference between git push and git pull?
+
+`git push` uploads local commits to the remote repository, whereas `git pull` downloads the latest commits from the remote repository to the local repository.
+
+---
+
+## Difference between git init and git clone?
+
+`git init` creates a new Git repository, whereas `git clone` downloads an existing Git repository along with its complete history.
+
+---
+
+## What is origin?
+
+`origin` is the default nickname of the remote repository.
+
+It is **not** a branch.
+
+---
+
+# Common Mistakes
+
+❌ Thinking `origin` is a branch.
+
+✅ `origin` is the remote repository.
+
+---
+
+❌ Running `git clone` every time.
+
+✅ Clone only once. After that, use `git pull`.
+
+---
+
+❌ Forgetting to commit before pushing.
+
+Correct workflow:
+
+```text
+Edit
+↓
+git add
+↓
+git commit
+↓
+git push
+```
+
+---
+
+❌ Working without pulling the latest changes.
+
+Always run:
+
+```bash
+git pull
+```
+
+before starting work on a shared project.
+
+---
+
+# Project Connection
+
+## Universal ML Dashboard
+
+```text
+Local Development
+        │
+        ▼
+git add
+        │
+        ▼
+git commit
+        │
+        ▼
+git push
+        │
+        ▼
+GitHub Repository
+```
+
+Every new feature (EDA, Data Cleaning, Model Training) should ideally be developed in its own branch and pushed to GitHub.
+
+---
+
+## Clinical Trial Outcome Prediction
+
+GitHub serves as:
+
+- Backup of your project.
+- Collaboration platform with teammates or mentors.
+- Portfolio showcasing your development progress.
+- Version history for experiments and code changes.
