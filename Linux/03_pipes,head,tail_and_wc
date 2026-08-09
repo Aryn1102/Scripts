@@ -1,10 +1,416 @@
-Python
-Machine Learning
-Deep Learning
-SQL
-Git
-Linux
-Docker
-Kubernetes
-Pandas
-NumPy
+# Linux Lesson 3 - Pipes, head, tail and wc
+
+## head
+
+`head` displays the first lines of a file.
+
+By default, it prints the first **10 lines**.
+
+Syntax:
+
+```bash
+head filename
+```
+
+Example:
+
+```bash
+head notes.txt
+```
+
+Print the first 5 lines:
+
+```bash
+head -5 notes.txt
+```
+
+---
+
+## tail
+
+`tail` displays the last lines of a file.
+
+By default, it prints the last **10 lines**.
+
+Syntax:
+
+```bash
+tail filename
+```
+
+Example:
+
+```bash
+tail notes.txt
+```
+
+Print the last 3 lines:
+
+```bash
+tail -3 notes.txt
+```
+
+---
+
+## wc
+
+`wc` (Word Count) counts the number of lines, words, and characters in a file.
+
+Syntax:
+
+```bash
+wc filename
+```
+
+Example:
+
+```bash
+wc notes.txt
+```
+
+Output format:
+
+```text
+Lines   Words   Characters   Filename
+```
+
+Useful options:
+
+Count only lines:
+
+```bash
+wc -l notes.txt
+```
+
+Count only words:
+
+```bash
+wc -w notes.txt
+```
+
+Count only characters:
+
+```bash
+wc -c notes.txt
+```
+
+---
+
+## Pipes ( | )
+
+A pipe (`|`) sends the output of one command as the input of another command.
+
+Syntax:
+
+```bash
+command1 | command2
+```
+
+Example:
+
+```bash
+cat notes.txt | wc -l
+```
+
+Meaning:
+
+1. `cat` reads the file.
+2. The output is passed to `wc -l`.
+3. `wc -l` counts the number of lines.
+
+---
+
+Another example:
+
+```bash
+cat notes.txt | head -3
+```
+
+Meaning:
+
+1. Read the file.
+2. Display only the first three lines.
+
+---
+
+Example:
+
+```bash
+grep "Python" notes.txt | wc -l
+```
+
+Meaning:
+
+1. Search all lines containing **Python**.
+2. Count the number of matching lines.
+
+---
+
+## Difference between > and |
+
+### >
+
+Redirects the output of a command into a file.
+
+Example:
+
+```bash
+echo "Hello" > hello.txt
+```
+
+Creates or overwrites `hello.txt`.
+
+---
+
+### >>
+
+Appends output to an existing file.
+
+Example:
+
+```bash
+echo "World" >> hello.txt
+```
+
+Adds new content without deleting the existing content.
+
+---
+
+### |
+
+Passes the output of one command directly to another command.
+
+Example:
+
+```bash
+cat hello.txt | wc -w
+```
+
+No file is created.
+
+---
+
+# Common Commands
+
+Display first 10 lines:
+
+```bash
+head file.txt
+```
+
+Display first 5 lines:
+
+```bash
+head -5 file.txt
+```
+
+Display last 10 lines:
+
+```bash
+tail file.txt
+```
+
+Display last 3 lines:
+
+```bash
+tail -3 file.txt
+```
+
+Count lines, words and characters:
+
+```bash
+wc file.txt
+```
+
+Count only lines:
+
+```bash
+wc -l file.txt
+```
+
+Count only words:
+
+```bash
+wc -w file.txt
+```
+
+Count only characters:
+
+```bash
+wc -c file.txt
+```
+
+Count matching lines:
+
+```bash
+grep "Python" notes.txt | wc -l
+```
+
+---
+
+# Interview Questions
+
+## What is a pipe (|)?
+
+A pipe sends the output of one command as the input to another command.
+
+---
+
+## Difference between > and |?
+
+`>` redirects the output of a command into a file, whereas `|` passes the output of one command directly as the input to another command.
+
+---
+
+## What does head do?
+
+`head` displays the first 10 lines of a file by default.
+
+---
+
+## What does tail do?
+
+`tail` displays the last 10 lines of a file by default.
+
+---
+
+## Why is wc useful?
+
+`wc` is useful for quickly counting the number of lines, words, or characters in a file.
+
+---
+
+# Common Mistakes
+
+❌ Thinking `|` stores output in a file.
+
+✅ It only passes output from one command to another.
+
+---
+
+❌ Confusing `>` and `>>`.
+
+- `>` creates a new file or overwrites an existing file.
+- `>>` appends content to an existing file.
+
+---
+
+❌ Assuming `wc -l` counts occurrences of a word.
+
+`wc -l` counts **lines**, not individual word occurrences.
+
+Example:
+
+```text
+Python Python Python
+```
+
+Output:
+
+```bash
+grep "Python" file.txt | wc -l
+```
+
+Result:
+
+```
+1
+```
+
+because only one line contains "Python".
+
+---
+
+# Engineering Examples
+
+## Count Python files
+
+```bash
+find . -name "*.py" | wc -l
+```
+
+Counts the number of Python files in the current directory and its subdirectories.
+
+---
+
+## Count error lines in a log
+
+```bash
+grep "ERROR" server.log | wc -l
+```
+
+Counts the number of log lines containing the word **ERROR**.
+
+---
+
+## View recent log entries
+
+```bash
+tail -20 server.log
+```
+
+Displays the last 20 lines of the log file.
+
+---
+
+## View the beginning of a dataset
+
+```bash
+head -10 data.csv
+```
+
+Shows the first 10 rows of the dataset.
+
+---
+
+# Project Connection
+
+## Universal ML Dashboard
+
+Useful for inspecting datasets and logs.
+
+Examples:
+
+```bash
+head dataset.csv
+```
+
+Preview the dataset.
+
+```bash
+tail training.log
+```
+
+View the latest training logs.
+
+```bash
+grep "ERROR" training.log | wc -l
+```
+
+Count the number of error messages.
+
+---
+
+## Clinical Trial Outcome Prediction
+
+Useful for preprocessing and debugging.
+
+Examples:
+
+```bash
+head trials.csv
+```
+
+Inspect the beginning of the dataset.
+
+```bash
+tail preprocess.log
+```
+
+Check the most recent preprocessing messages.
+
+```bash
+grep "Missing" preprocess.log | wc -l
+```
+
+Count lines containing missing-value warnings.
