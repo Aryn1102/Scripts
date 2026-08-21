@@ -1,0 +1,100 @@
+# Git Lesson 4 — Fetch, Tracking & Pull Requests
+
+## git fetch
+
+```bash
+git fetch origin
+```
+
+Downloads the latest changes from the remote repository but does not apply them to the current branch.
+
+`fetch` → gets remote updates without integrating them.
+
+## git pull
+
+```bash
+git pull
+```
+
+Downloads remote changes and integrates them into the current branch.
+
+`pull = fetch + integration`
+
+## main vs origin/main
+
+`main` → local main branch.
+
+`origin/main` → remote-tracking reference representing the remote main branch.
+
+`origin` → name of the remote repository, not a branch.
+
+## Updating a feature branch
+
+```bash
+git switch feature/model
+git fetch origin
+git merge origin/main
+```
+
+This brings the latest changes from remote `main` into the current feature branch.
+
+## Pull Request
+
+A Pull Request is a request to review and merge changes from one branch into another.
+
+It allows:
+
+* code review
+* testing
+* discussion
+* approval
+* controlled integration into `main`
+
+You can make more commits after creating a PR. Pushing them to the same branch automatically updates the existing PR.
+
+## Why use feature branches?
+
+To isolate development, allow multiple people to work simultaneously, review changes safely, and avoid directly destabilizing `main`.
+
+## Typical workflow
+
+```text
+Create feature branch
+↓
+Develop
+↓
+git add
+↓
+git commit
+↓
+git push
+↓
+Pull Request
+↓
+Review + Testing
+↓
+Merge into main
+```
+
+## Interview Questions
+
+**What is `git fetch`?**
+Downloads remote changes without integrating them into the current branch.
+
+**Difference between fetch and pull?**
+Fetch downloads changes; pull downloads and integrates them.
+
+**What is `origin/main`?**
+A remote-tracking reference representing the last known state of the remote main branch.
+
+**Difference between `main` and `origin/main`?**
+`main` is local; `origin/main` tracks the remote main branch.
+
+**What is a Pull Request?**
+A request to review and merge changes from one branch into another.
+
+**Why use feature branches?**
+To isolate development and safely review and integrate changes before merging into main.
+
+**Can a PR be updated after creation?**
+Yes. Push additional commits to the same branch and the existing PR is updated.
