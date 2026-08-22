@@ -1,0 +1,211 @@
+Why do we evaluate a model?
+
+Model evaluation is the process of measuring how well a trained model performs on unseen data and how well it generalizes.
+
+Classification vs Regression
+
+Classification → predicts a category/class.
+
+Examples:
+
+Spam / Not Spam
+Pass / Fail
+Disease / No Disease
+
+Regression → predicts a continuous numerical value.
+
+Examples:
+
+House price
+Temperature
+Sales
+Confusion Matrix
+
+A confusion matrix compares the actual class with the predicted class.
+
+                 Predicted
+              Positive  Negative
+
+
+Actual Positive   TP        FN
+Actual Negative   FP        TN
+
+TP (True Positive) → predicted positive and actually positive.
+
+TN (True Negative) → predicted negative and actually negative.
+
+FP (False Positive) → predicted positive but actually negative.
+
+FN (False Negative) → predicted negative but actually positive.
+
+Accuracy
+
+Percentage of total predictions that are correct.
+
+Accuracy = (TP + TN) / (TP + TN + FP + FN)
+
+Useful when classes are reasonably balanced.
+
+Precision
+
+Of all observations predicted as positive, how many were actually positive?
+
+Precision = TP / (TP + FP)
+
+High precision → fewer false positives.
+
+Think:
+
+"When the model says YES, how often is it correct?"
+
+Recall
+
+Of all actual positive observations, how many did the model correctly identify?
+
+Recall = TP / (TP + FN)
+
+High recall → fewer false negatives.
+
+Think:
+
+"Of all actual YES cases, how many did we find?"
+
+F1 Score
+
+F1-score is the harmonic mean of precision and recall.
+
+F1 = 2 × (Precision × Recall)
+     --------------------------
+       Precision + Recall
+
+Useful when we need a balance between precision and recall, especially with imbalanced classes.
+
+Precision vs Recall
+Precision → focus on predicted positives
+Recall    → focus on actual positives
+
+If false positives are more costly → prioritize precision.
+
+If false negatives are more costly → prioritize recall.
+
+Example:
+
+Spam detection → Precision can be important
+Disease detection → Recall can be important
+Regression Metrics
+MAE
+
+Mean Absolute Error.
+
+MAE = average(|actual - predicted|)
+
+Measures the average absolute prediction error.
+
+Easy to interpret.
+
+MSE
+
+Mean Squared Error.
+
+MSE = average((actual - predicted)²)
+
+Penalizes large errors more heavily than MAE.
+
+RMSE
+
+Root Mean Squared Error.
+
+RMSE = √MSE
+
+Its unit is the same as the target variable, making it easier to interpret than MSE.
+
+R²
+
+R² represents the proportion of variance in the target variable that is explained by the model.
+
+R² = 1
+
+means the model perfectly explains the target variance on the evaluated data.
+
+Choosing Metrics
+Classification
+    ↓
+Balanced classes → Accuracy
+    ↓
+False positives important → Precision
+    ↓
+False negatives important → Recall
+    ↓
+Balance precision + recall → F1
+
+
+Regression
+    ↓
+MAE → Average absolute error
+MSE → Penalizes large errors
+RMSE → Same units as target
+R² → Explained variance
+Important Interview Questions
+
+1. What is model evaluation?
+
+Measuring how well a trained model performs on unseen data.
+
+2. What is a confusion matrix?
+
+A table comparing actual and predicted classes using TP, TN, FP and FN.
+
+3. Difference between precision and recall?
+
+Precision measures how many predicted positives are actually positive, while recall measures how many actual positives were correctly identified.
+
+4. When would you prefer recall over precision?
+
+When false negatives are more costly, such as disease detection.
+
+5. Why can accuracy be misleading?
+
+Because accuracy can give a falsely high performance when the dataset has imbalanced classes.
+
+6. What is F1-score?
+
+The harmonic mean of precision and recall.
+
+7. Difference between MAE and MSE?
+
+MAE calculates average absolute error, while MSE calculates average squared error and penalizes large errors more heavily.
+
+8. Why use RMSE instead of MSE?
+
+RMSE is in the same units as the target variable.
+
+9. What does R² represent?
+
+The proportion of variance in the target variable explained by the model.
+
+Key Takeaways
+Classification → Accuracy, Precision, Recall, F1
+
+
+Confusion Matrix → TP, TN, FP, FN
+
+
+Precision → predicted positives
+
+
+Recall → actual positives
+
+
+F1 → balance of precision and recall
+
+
+Regression → MAE, MSE, RMSE, R²
+
+
+RMSE → same unit as target
+
+
+R² → explained variance
+
+
+Imbalanced classes → don't rely only on accuracy
