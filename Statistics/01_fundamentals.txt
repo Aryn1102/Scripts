@@ -1,0 +1,405 @@
+# Statistics — Lesson 1: Fundamentals
+
+## What is Statistics?
+
+Statistics is the process of **collecting, organizing, analyzing, interpreting, and presenting data**.
+
+In ML, statistics helps us understand:
+
+* Data distribution
+* Central tendency
+* Spread
+* Outliers
+* Relationships between variables
+* Data quality
+
+---
+
+## Population
+
+A **population** is the complete set of observations we are interested in studying.
+
+Example:
+
+All students in a college.
+
+---
+
+## Sample
+
+A **sample** is a subset of the population used to study or estimate characteristics of the population.
+
+Example:
+
+500 students selected from the college.
+
+```text
+Population
+    ↓
+All students
+    ↓
+Sample
+    ↓
+Selected students
+```
+
+Why use a sample?
+
+* Population may be too large
+* Collecting all data may be expensive
+* Collecting all data may take too much time
+
+---
+
+# Measures of Central Tendency
+
+Central tendency describes the **typical or central value** of a dataset.
+
+The three major measures are:
+
+```text
+Mean
+Median
+Mode
+```
+
+---
+
+## Mean
+
+Mean is the arithmetic average.
+
+```text
+Mean = Sum of all values / Number of values
+```
+
+Example:
+
+```text
+10, 20, 30, 40, 50
+```
+
+```text
+Mean = (10 + 20 + 30 + 40 + 50) / 5
+     = 30
+```
+
+### Problem with mean
+
+Mean is sensitive to extreme values.
+
+Example:
+
+```text
+10, 20, 30, 40, 100
+```
+
+The `100` pulls the mean upward.
+
+---
+
+## Median
+
+Median is the **middle value after sorting the data**.
+
+Example:
+
+```text
+10, 20, 30, 40, 50
+```
+
+Median:
+
+```text
+30
+```
+
+For an even number of observations, take the average of the two middle values.
+
+Example:
+
+```text
+10, 20, 30, 40
+```
+
+```text
+Median = (20 + 30) / 2
+       = 25
+```
+
+### Why median is useful
+
+Median is more resistant to extreme values than the mean.
+
+Example:
+
+```text
+10, 20, 30, 40, 1000
+```
+
+The median remains:
+
+```text
+30
+```
+
+while the mean is heavily affected by `1000`.
+
+---
+
+## Mode
+
+Mode is the **most frequently occurring value**.
+
+Example:
+
+```text
+10, 20, 20, 30, 40
+```
+
+Mode:
+
+```text
+20
+```
+
+A dataset can have:
+
+* One mode
+* Multiple modes
+* No mode
+
+---
+
+# Mean vs Median vs Mode
+
+| Measure | Meaning             | Sensitive to outliers? |
+| ------- | ------------------- | ---------------------- |
+| Mean    | Average             | Yes                    |
+| Median  | Middle value        | Much less              |
+| Mode    | Most frequent value | No direct effect       |
+
+---
+
+# Measures of Spread
+
+Central tendency alone isn't enough.
+
+Consider:
+
+```text
+A = 48, 49, 50, 51, 52
+```
+
+and:
+
+```text
+B = 10, 30, 50, 70, 90
+```
+
+Both have:
+
+```text
+Mean = 50
+```
+
+But their spread is very different.
+
+Important measures of spread:
+
+```text
+Range
+Variance
+Standard deviation
+```
+
+---
+
+# Range
+
+Range is the difference between the maximum and minimum values.
+
+```text
+Range = Maximum - Minimum
+```
+
+Example:
+
+```text
+10, 20, 30, 40, 50
+```
+
+```text
+Range = 50 - 10
+      = 40
+```
+
+Range is simple but can be strongly affected by extreme values.
+
+---
+
+# Variance
+
+Variance measures how far observations are spread around the mean.
+
+Conceptually:
+
+```text
+Variance = average squared deviation from the mean
+```
+
+The important idea:
+
+> Larger variance → data is more spread out.
+
+> Smaller variance → data is more concentrated around the mean.
+
+Variance uses **squared differences**, so its unit is squared.
+
+---
+
+# Standard Deviation
+
+Standard deviation is the square root of variance.
+
+```text
+Standard deviation = √Variance
+```
+
+It tells us approximately how spread out the observations are around the mean.
+
+The major advantage:
+
+**Standard deviation has the same unit as the original data.**
+
+Example:
+
+If income is measured in ₹:
+
+```text
+Standard deviation → ₹
+Variance            → ₹²
+```
+
+This makes standard deviation easier to interpret.
+
+---
+
+# Why Statistics Matters in ML
+
+Statistics helps with:
+
+```text
+Data
+ ↓
+Understand distribution
+ ↓
+Detect unusual values
+ ↓
+Measure spread
+ ↓
+Understand relationships
+ ↓
+Prepare data
+ ↓
+Train ML models
+ ↓
+Evaluate results
+```
+
+You will repeatedly use statistical concepts when working with:
+
+* Pandas
+* Exploratory Data Analysis
+* Feature engineering
+* Data preprocessing
+* Model evaluation
+* Experimentation
+
+---
+
+# Interview Questions
+
+### Q1
+
+What is statistics?
+
+### Q2
+
+What is the difference between population and sample?
+
+### Q3
+
+What is mean?
+
+### Q4
+
+What is median?
+
+### Q5
+
+Why is median less affected by outliers than mean?
+
+### Q6
+
+What is mode?
+
+### Q7
+
+What is range?
+
+### Q8
+
+What does variance measure?
+
+### Q9
+
+What is the relationship between variance and standard deviation?
+
+### Q10
+
+Why is standard deviation easier to interpret than variance?
+
+### Q11
+
+Which measure of central tendency is generally preferred when extreme outliers are present?
+
+### Q12
+
+Two datasets have the same mean but different standard deviations. What does that tell you?
+
+---
+
+# Quick Revision
+
+```text
+Statistics
+→ Analyze and interpret data
+
+Population
+→ Entire group
+
+Sample
+→ Subset of population
+
+Mean
+→ Average
+
+Median
+→ Middle value after sorting
+
+Mode
+→ Most frequent value
+
+Range
+→ Maximum - Minimum
+
+Variance
+→ Average squared deviation from mean
+
+Standard deviation
+→ √Variance
+→ Same unit as original data
+```
+
+This is the **copy-paste version for Statistics Lesson 1**.
