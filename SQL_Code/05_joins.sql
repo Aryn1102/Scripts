@@ -161,7 +161,7 @@ SELECT
 FROM students as s
 LEFT JOIN marks as m 
     on s.id = m.student_id
-GROUP BY s.name;
+GROUP BY s.id, s.name;
 
 /*
 Find the average score for each branch and sort from 
